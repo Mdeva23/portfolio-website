@@ -37,7 +37,15 @@ C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\refint
 C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\PortfolioApp.pdb
 C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\PortfolioApp.genruntimeconfig.cache
 C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\ref\PortfolioApp.dll
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\out\web.config
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\web.config
 C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\appsettings.json
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\out\PortfolioApp.deps.json
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\out\PortfolioApp.runtimeconfig.json
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\out\PortfolioApp.staticwebassets.endpoints.json
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\PortfolioApp.deps.json
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\PortfolioApp.runtimeconfig.json
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\PortfolioApp.staticwebassets.endpoints.json
 C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\PortfolioApp.staticwebassets.runtime.json
 C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\PortfolioApp.staticwebassets.endpoints.json
 C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\PortfolioApp.exe
@@ -75,11 +83,3 @@ C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\refint\PortfolioApp.dll
 C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\PortfolioApp.pdb
 C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\PortfolioApp.genruntimeconfig.cache
 C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\ref\PortfolioApp.dll
-C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\out\web.config
-C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\web.config
-C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\out\PortfolioApp.deps.json
-C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\out\PortfolioApp.runtimeconfig.json
-C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\out\PortfolioApp.staticwebassets.endpoints.json
-C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\PortfolioApp.deps.json
-C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\PortfolioApp.runtimeconfig.json
-C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\out\PortfolioApp.staticwebassets.endpoints.json
