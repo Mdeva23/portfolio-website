@@ -1,0 +1,77 @@
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\appsettings.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\PortfolioApp.staticwebassets.runtime.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\PortfolioApp.staticwebassets.endpoints.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\PortfolioApp.exe
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\PortfolioApp.deps.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\PortfolioApp.runtimeconfig.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\PortfolioApp.dll
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\PortfolioApp.pdb
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\MailKit.dll
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\MimeKit.dll
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\SendGrid.dll
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\StarkbankEcdsa.dll
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\PortfolioApp.csproj.AssemblyReference.cache
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\PortfolioApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\PortfolioApp.AssemblyInfoInputs.cache
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\PortfolioApp.AssemblyInfo.cs
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\PortfolioApp.csproj.CoreCompileInputs.cache
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\PortfolioApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\PortfolioApp.sourcelink.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\scopedcss\bundle\PortfolioApp.styles.css
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\Portfoli.9FAEFCC7.Up2Date
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\PortfolioApp.dll
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\refint\PortfolioApp.dll
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\PortfolioApp.pdb
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\PortfolioApp.genruntimeconfig.cache
+C:\Users\davids\Documents\I-Future programs\PortfolioApp\obj\Debug\net8.0\ref\PortfolioApp.dll
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\appsettings.json
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\PortfolioApp.staticwebassets.runtime.json
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\PortfolioApp.staticwebassets.endpoints.json
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\PortfolioApp.exe
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\PortfolioApp.deps.json
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\PortfolioApp.runtimeconfig.json
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\PortfolioApp.dll
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\PortfolioApp.pdb
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\MailKit.dll
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\MimeKit.dll
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\SendGrid.dll
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\StarkbankEcdsa.dll
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\david\C#\PortfolioApp\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\PortfolioApp.csproj.AssemblyReference.cache
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\PortfolioApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\PortfolioApp.AssemblyInfoInputs.cache
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\PortfolioApp.AssemblyInfo.cs
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\PortfolioApp.csproj.CoreCompileInputs.cache
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\PortfolioApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\PortfolioApp.sourcelink.json
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\scopedcss\bundle\PortfolioApp.styles.css
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\Portfoli.9FAEFCC7.Up2Date
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\PortfolioApp.dll
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\refint\PortfolioApp.dll
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\PortfolioApp.pdb
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\PortfolioApp.genruntimeconfig.cache
+C:\Users\david\C#\PortfolioApp\obj\Debug\net8.0\ref\PortfolioApp.dll

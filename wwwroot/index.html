@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setshogo David Sedumedi — Software Developer</title>
+    <link rel="icon" type="image/png" href="/favicon_ssd_code.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- Background Effects -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow" id="bgGlow"></div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">{</span>SSD<span class="logo-bracket">}</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about"      class="nav-link" data-section="about">About</a>
+        <a href="#projects"   class="nav-link" data-section="projects">Projects</a>
+        <a href="#skills"     class="nav-link" data-section="skills">Skills</a>
+        <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+        <a href="#contact"    class="nav-link" data-section="contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">◑</span>
+        </button>
+        <a href="#contact" class="nav-cta">Hire Me</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about"      class="mobile-link">About</a>
+    <a href="#projects"   class="mobile-link">Projects</a>
+    <a href="#skills"     class="mobile-link">Skills</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#contact"    class="mobile-link">Contact</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        <span>Available for new projects</span>
+      </div>
+      <h1 class="hero-title reveal">
+        <p class="intro">Hello, I am</p>
+        <span class="title-line">Setshogo</span>
+        <span class="title-line accent">David</span>
+        <span class="title-line">Sedumedi</span>
+      </h1>
+      <p class="hero-sub reveal">a software developer</p>
+      <!-- <p class="hero-desc reveal" id="heroDesc">Loading...</p> -->
+      <div class="hero-tags reveal" id="heroTags"></div>
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary">View My Work <span class="btn-arrow">→</span></a>
+        <a href="#contact"  class="btn btn-ghost">Let's Talk</a>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span>scroll</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="terminal-card reveal">
+        <div class="terminal-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="terminal-title">SSD@portfolio ~ </span>
+        </div>
+        <div class="terminal-body">
+          <div class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">whoami</span></div>
+          <div class="t-output t-hidden" id="to1">setshogo_david_sedumedi — software_developer</div>
+          <div class="t-line  t-hidden" id="tl2"><span class="t-prompt">$ </span><span class="t-cmd">skills.json</span></div>
+          <div class="t-output t-hidden" id="to3"><span class="t-key">"stack"</span>: [<span class="t-str">"C#"</span>, <span class="t-str">"Java"</span>, <span class="t-str">".NET"</span>, <span class="t-str">"Python"</span>, <span class="t-str">"ILE RPG"</span>, <span class="t-str">"ASP.NET Core"</span>, <span class="t-str">"JavaScript"</span>, <span class="t-str">"HTML"</span>, <span class="t-str">"CSS"</span>, <span class="t-str">"SQL"</span>, <span class="t-str">"DB2"</span>, <span class="t-str">"Microsoft Azure"</span>, <span class="t-str">"Git"</span>, <span class="t-str">"UiPath"</span>]</div>
+          <div class="t-line  t-hidden" id="tl4"><span class="t-prompt">$ </span><span class="t-cmd">code_of_the_day</span></div>
+          <div class="t-output t-hidden" id="to5">if (coffee > 0) { code(); } else { refuel(); }</div>
+          <div class="t-line  t-hidden" id="tl4"><span class="t-prompt">$ </span><span class="t-cursor">█</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">01 / About</span>
+        <h2 class="section-title">The person behind<br /><em>the code</em></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="avatar-wrap">
+            <div class="avatar-ring"></div>
+            <div class="avatar-inner">
+              <img src="/David.jpeg" alt="Setshogo David Sedumedi" class="avatar-img">
+            </div>
+            <div class="avatar-status">
+              <span class="status-dot"></span> Open to work
+            </div>
+          </div>
+          <div class="stat-cards">
+            <!-- <<div class="stat-card">
+              <span class="stat-num">1+</span>
+              <span class="stat-label">Years exp.</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">4+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">15+</span>
+              <span class="stat-label">Clients</span>
+            </div>  -->
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <p class="about-bio" id="aboutBio">Loading...</p>
+          <div class="about-details">
+            <div class="detail-item">
+              <span class="detail-icon">📍</span>
+              <span id="aboutLocation">Loading...</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">✉️</span>
+              <a href="#" id="aboutEmail">Loading...</a>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🎓</span>
+              <span id="aboutUniversity">BSc in Information Technolgy - NWU</span>
+            </div>
+          </div>
+          <div class="social-links" id="socialLinks"></div>
+          <a href="Setshogo_David_Sedumedi's_Resume.pdf" class="btn btn-primary">Download CV <span class="btn-arrow">↓</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">02 / Projects</span>
+        <h2 class="section-title">Things I've<br /><em>built</em></h2>
+      </div>
+      <div class="filter-bar reveal" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Full-Stack">Full-Stack</button>
+        <button class="filter-btn" data-filter="Frontend">Frontend</button>
+        <button class="filter-btn" data-filter="Backend">Backend</button>
+        <button class="filter-btn" data-filter="Tools">Tools</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
+        <p class="loading-state">Loading projects...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">03 / Skills</span>
+        <h2 class="section-title">My technical<br /><em>toolkit</em></h2>
+      </div>
+      <div class="skills-layout">
+        <div class="skills-categories reveal" id="skillsCategories"></div>
+        <div class="skills-bars reveal" id="skillsBars"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">04 / Experience</span>
+        <h2 class="section-title">Where I've<br /><em>worked</em></h2>
+      </div>
+      <div class="timeline" id="timeline">
+        <p class="loading-state">Loading experience...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">05 / Contact</span>
+        <h2 class="section-title">Let's build<br /><em>something</em></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="contact-tagline">Have a project in mind? Let's discuss how we can bring it to life.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="ci-icon">✉</div>
+              <div>
+                <div class="ci-label">Email</div>
+                <a class="ci-value" id="contactEmail" href="mailto:davidsedumedi23@gmail.com">davidsedumedi23@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">📍</div>
+              <div>
+                <div class="ci-label">Location</div>
+                <span class="ci-value" id="contactLocation">Tembisa, 1632, GP</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">⚡</div>
+              <div>
+                <div class="ci-label">Response time</div>
+                <span class="ci-value">Within 24 hours</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email" placeholder="john@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" placeholder="Project inquiry" />
+            </div>
+            <div class="form-group">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-arrow">→</span>
+              <span class="btn-loading t-hidden">Sending...</span>
+            </button>
+            <div class="form-feedback t-hidden" id="formFeedback"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-bracket">{</span>SSD<span class="logo-bracket">}</span>
+        </div>
+        <p class="footer-copy">© 2026 Setshogo David Sedumedi.</p>
+        <div class="footer-links">
+          <a href="https://github.com/Mdeva23" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/david-sedumedi-8331a3291" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
