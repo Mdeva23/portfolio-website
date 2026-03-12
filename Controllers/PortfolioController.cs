@@ -42,7 +42,7 @@ public class PortfolioController : ControllerBase
                 Title = "SSD PortfolioApp",
                 Description = "A modern full-stack portfolio website built with ASP.NET Core 8 and vanilla JavaScript. Features dark/light mode, scroll animations, skill bars, project filtering, and a working contact form.",
                 Tags = new[] { "C#", "ASP.NET", "ASP.NET Core", "JS", "HTML", "CSS" },
-                GithubUrl = "",
+                GithubUrl = "https://github.com/Mdeva23/portfolio-website",
                 LiveUrl = "",
                 Category = "Full-Stack",
                 Year = 2026

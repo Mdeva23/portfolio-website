@@ -1,0 +1,17 @@
+C:\Users\david\C#\PortfolioApp\out\PortfolioApp.exe
+C:\Users\david\C#\PortfolioApp\out\out\web.config
+C:\Users\david\C#\PortfolioApp\out\out\PortfolioApp.deps.json
+C:\Users\david\C#\PortfolioApp\out\out\PortfolioApp.runtimeconfig.json
+C:\Users\david\C#\PortfolioApp\out\out\PortfolioApp.staticwebassets.endpoints.json
+C:\Users\david\C#\PortfolioApp\out\PortfolioApp.dll
+C:\Users\david\C#\PortfolioApp\out\PortfolioApp.deps.json
+C:\Users\david\C#\PortfolioApp\out\PortfolioApp.runtimeconfig.json
+C:\Users\david\C#\PortfolioApp\out\PortfolioApp.pdb
+C:\Users\david\C#\PortfolioApp\out\BouncyCastle.Cryptography.dll
+C:\Users\david\C#\PortfolioApp\out\MailKit.dll
+C:\Users\david\C#\PortfolioApp\out\MimeKit.dll
+C:\Users\david\C#\PortfolioApp\out\Newtonsoft.Json.dll
+C:\Users\david\C#\PortfolioApp\out\SendGrid.dll
+C:\Users\david\C#\PortfolioApp\out\StarkbankEcdsa.dll
+C:\Users\david\C#\PortfolioApp\out\System.Security.Cryptography.Pkcs.dll
+C:\Users\david\C#\PortfolioApp\out\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
