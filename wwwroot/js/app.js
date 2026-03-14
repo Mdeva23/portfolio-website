@@ -167,7 +167,7 @@ async function loadInfo() {
   // Hero tags
   const tagsEl = document.getElementById('heroTags');
   if (tagsEl && d.tags)
-    tagsEl.innerHTML = d.tags.map(t => `<span class="hero-tag">${escape(t)}</span>`).join('');
+    tagsEl.innerHTML = d.tags.map(t => `<span class="hero-tag">${sanitize(t)}</span>`).join('');
 
   // Social links
   const socials = document.getElementById('socialLinks');
@@ -177,7 +177,7 @@ async function loadInfo() {
       { label: '⊞ LinkedIn', url: d.linkedIn  },
     ].filter(x => x.url);
     socials.innerHTML = items.map(x =>
-      `<a href="${escape(x.url)}" target="_blank" rel="noopener" class="social-link">${x.label}</a>`
+      `<a href="${sanitize(x.url)}" target="_blank" rel="noopener" class="social-link">${x.label}</a>`
     ).join('');
   }
 }
@@ -205,17 +205,17 @@ function renderProjects(projects) {
   if (!projects.length) { grid.innerHTML = '<p class="loading-state">No projects found.</p>'; return; }
 
   grid.innerHTML = projects.map(p => `
-    <div class="project-card reveal" data-category="${escape(p.category)}">
+    <div class="project-card reveal" data-category="${sanitize(p.category)}">
       <div class="project-top">
-        <span class="project-cat">${escape(p.category)}</span>
+        <span class="project-cat">${sanitize(p.category)}</span>
         <span class="project-year">${p.year}</span>
       </div>
-      <h3 class="project-title">${escape(p.title)}</h3>
-      <p class="project-desc">${escape(p.description)}</p>
-      <div class="project-tags">${(p.tags||[]).map(t => `<span class="project-tag">${escape(t)}</span>`).join('')}</div>
+      <h3 class="project-title">${sanitize(p.title)}</h3>
+      <p class="project-desc">${sanitize(p.description)}</p>
+      <div class="project-tags">${(p.tags||[]).map(t => `<span class="project-tag">${sanitize(t)}</span>`).join('')}</div>
       <div class="project-links">
-        ${p.githubUrl ? `<a href="${escape(p.githubUrl)}" target="_blank" rel="noopener" class="project-link">⌥ GitHub</a>` : ''}
-        ${p.liveUrl   ? `<a href="${escape(p.liveUrl)}"   target="_blank" rel="noopener" class="project-link">↗ Live</a>`   : ''}
+        ${p.githubUrl ? `<a href="${sanitize(p.githubUrl)}" target="_blank" rel="noopener" class="project-link">⌥ GitHub</a>` : ''}
+        ${p.liveUrl   ? `<a href="${sanitize(p.liveUrl)}"   target="_blank" rel="noopener" class="project-link">↗ Live</a>`   : ''}
       </div>
     </div>
   `).join('');
@@ -243,10 +243,10 @@ async function loadSkills() {
     const meta = catMeta[cat] || { icon: '🔧', desc: '' };
     const count = skills.filter(s => s.category === cat).length;
     return `
-      <div class="skill-category-card ${i === 0 ? 'active' : ''}" data-cat="${escape(cat)}">
+      <div class="skill-category-card ${i === 0 ? 'active' : ''}" data-cat="${sanitize(cat)}">
         <div class="scc-top">
           <span class="scc-icon">${meta.icon}</span>
-          <span class="scc-name">${escape(cat)}</span>
+          <span class="scc-name">${sanitize(cat)}</span>
           <span class="scc-count">${count}</span>
         </div>
         <p class="scc-desc">${meta.desc}</p>
@@ -272,7 +272,7 @@ function renderSkillBars(category, skills) {
   barsEl.innerHTML = filtered.map(s => `
     <div class="skill-bar-item">
       <div class="skill-bar-top">
-        <span class="skill-name"><span>${s.icon}</span>${escape(s.name)}</span>
+        <span class="skill-name"><span>${s.icon}</span>${sanitize(s.name)}</span>
         <span class="skill-pct">${s.proficiency}%</span>
       </div>
       <div class="skill-track">
@@ -281,7 +281,6 @@ function renderSkillBars(category, skills) {
     </div>
   `).join('');
 
-  // Animate bars after two rAF ticks so CSS transition fires
   requestAnimationFrame(() => requestAnimationFrame(() => {
     barsEl.querySelectorAll('.skill-fill').forEach(f => {
       f.style.width = f.dataset.pct + '%';
@@ -299,12 +298,12 @@ async function loadExperience() {
   timeline.innerHTML = exp.map(e => `
     <div class="timeline-item ${e.isCurrent ? 'current' : ''}">
       <div class="timeline-dot"></div>
-      <div class="timeline-period">${escape(e.period)}</div>
-      <h3 class="timeline-role">${escape(e.role)}</h3>
-      <div class="timeline-company">${escape(e.company)}</div>
-      <p class="timeline-desc">${escape(e.description)}</p>
+      <div class="timeline-period">${sanitize(e.period)}</div>
+      <h3 class="timeline-role">${sanitize(e.role)}</h3>
+      <div class="timeline-company">${sanitize(e.company)}</div>
+      <p class="timeline-desc">${sanitize(e.description)}</p>
       <ul class="timeline-highlights">
-        ${(e.highlights||[]).map(h => `<li>${escape(h)}</li>`).join('')}
+        ${(e.highlights||[]).map(h => `<li>${sanitize(h)}</li>`).join('')}
       </ul>
     </div>
   `).join('');
@@ -366,7 +365,7 @@ function setupContactForm() {
         feedback.className   = 'form-feedback success';
         form.reset();
 
-        // Fade out and hide after 15 seconds
+        // Fade out after 15 seconds
         setTimeout(() => {
           feedback.style.opacity = '0';
           setTimeout(() => {
@@ -417,7 +416,7 @@ function setLink(id, text, href) {
   el.href = href;
 }
 
-function escape(str) {
+function sanitize(str) {
   return String(str)
     .replace(/&/g,'&amp;')
     .replace(/</g,'&lt;')
