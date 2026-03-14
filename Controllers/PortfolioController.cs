@@ -93,6 +93,44 @@ public class PortfolioController : ControllerBase
         });
     }
 
+    [HttpGet("experience")]
+    public ActionResult<IEnumerable<Experience>> GetExperience()
+    {
+        return Ok(new List<Experience>
+        {
+            new Experience
+            {
+                Id = 1,
+                Role = "Full Stack Junior RPG Developer",
+                Company = "Nashua LTD",
+                Period = "Dec 2025 — Present",
+                Description = "Developed and optimized enterprise applications on IBM i (AS/400) using ILE RPG, DB2, and embedded SQL, delivering reliable and efficient backend solutions for business-critical operations.",
+                Highlights = new[]
+                {
+                    "Built interactive subfile programs improving backend processing efficiency",
+                    "Modernized legacy systems increasing reliability and maintainability of enterprise applications",
+                    "Implemented paging, validation, and batch processing ensuring accurate and high performance business operations"
+                },
+                IsCurrent = true
+            },
+            new Experience
+            {
+                Id = 2,
+                Role = "IBM I RPG Developer Intern",
+                Company = "Momentum Metropolitan",
+                Period = "Feb 2025 - Dec 2025",
+                Description = "Gained hands-on experience with enterprise systems on IBM i (AS/400), learning ILE RPG, DB2, and embedded SQL in real world development environments.",
+                Highlights = new[]
+                {
+                    "Gained hands-on experience solving real-world problems alongside experienced developers",
+                    "Learned IBM i backend development by assisting in enterprise projects",
+                    "Contributed to interactive programs supporting business-critical systems"
+                },
+                IsCurrent = false
+            }
+        });
+    }
+
     [HttpPost("contact")]
     public async Task<ActionResult> SendMessage([FromBody] ContactMessage message)
     {
