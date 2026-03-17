@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============================================================
-   THEME  (dark / light, persisted in localStorage)
+   THEME (dark / light, persisted in localStorage)
    ============================================================ */
 function initTheme() {
   const saved = localStorage.getItem('portfolio-theme') || 'dark';
@@ -131,6 +131,7 @@ function initTerminal() {
     { delay: 2500, id: 'tl3' },
     { delay: 3100, id: 'to3' },
     { delay: 3700, id: 'tl4' },
+    { delay: 4300, id: 'to5' },
   ];
   steps.forEach(({ delay, id }) =>
     setTimeout(() => document.getElementById(id)?.classList.remove('t-hidden'), delay)
@@ -161,15 +162,12 @@ async function loadInfo() {
   setLink('aboutEmail',      d.email, `mailto:${d.email}`);
   setLink('contactEmail',    d.email, `mailto:${d.email}`);
   setText('contactLocation', d.location);
-  setText('avatarInitials',  d.name.split(' ').map(n => n[0]).join(''));
   document.title = `${d.name} — ${d.title}`;
 
-  // Hero tags
   const tagsEl = document.getElementById('heroTags');
   if (tagsEl && d.tags)
     tagsEl.innerHTML = d.tags.map(t => `<span class="hero-tag">${sanitize(t)}</span>`).join('');
 
-  // Social links
   const socials = document.getElementById('socialLinks');
   if (socials) {
     const items = [
@@ -340,6 +338,7 @@ function setupContactForm() {
     btnArrow.classList.add('t-hidden');
     btnLoading.classList.remove('t-hidden');
     feedback.className = 'form-feedback t-hidden';
+    feedback.textContent = '';
 
     const payload = {
       name:    form.querySelector('[name="name"]').value.trim(),
@@ -358,27 +357,20 @@ function setupContactForm() {
         new Promise(resolve => setTimeout(resolve, 800))
       ]);
 
-      const data = await res.json();
+      let data;
+      try { data = await res.json(); } catch { data = {}; }
 
       if (res.ok) {
-        feedback.textContent = data.message || 'Message sent!';
+        feedback.textContent = data.message || 'Message sent successfully!';
         feedback.className   = 'form-feedback success';
         form.reset();
-
-        // Fade out after 15 seconds
-        setTimeout(() => {
-          feedback.style.opacity = '0';
-          setTimeout(() => {
-            feedback.className     = 'form-feedback t-hidden';
-            feedback.style.opacity = '1';
-          }, 500);
-        }, 15000);
-
       } else {
         feedback.textContent = data.error || 'Something went wrong. Please try again.';
         feedback.className   = 'form-feedback error';
       }
-    } catch {
+
+    } catch (err) {
+      console.error(err);
       feedback.textContent = 'Network error — please try again.';
       feedback.className   = 'form-feedback error';
     }
@@ -387,6 +379,15 @@ function setupContactForm() {
     btnText.classList.remove('t-hidden');
     btnArrow.classList.remove('t-hidden');
     btnLoading.classList.add('t-hidden');
+
+    if (feedback.className.includes('success')) {
+      feedback.style.transition = 'opacity 0.5s';
+      setTimeout(() => feedback.style.opacity = '0', 15000);
+      setTimeout(() => {
+        feedback.className     = 'form-feedback t-hidden';
+        feedback.style.opacity = '1';
+      }, 15500);
+    }
   });
 }
 
