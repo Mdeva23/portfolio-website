@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============================================================
-   THEME (dark / light, persisted in localStorage)
+   THEME
    ============================================================ */
 function initTheme() {
   const saved = localStorage.getItem('portfolio-theme') || 'dark';
@@ -52,7 +52,7 @@ function initCursor() {
     requestAnimationFrame(animate);
   })();
 
-  document.querySelectorAll('a, button, .project-card, .skill-category-card, .cert-card').forEach(el => {
+  document.querySelectorAll('a, button, .project-card, .skill-category-card, .cert-card, .edu-card').forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
   });
@@ -82,7 +82,7 @@ function initNav() {
 }
 
 function highlightActiveSection() {
-  const sections = ['home','about','projects','skills','experience','certificates','contact'];
+  const sections = ['home','about','projects','skills','experience','education','certificates','contact'];
   const mid = window.scrollY + window.innerHeight / 3;
   sections.forEach(id => {
     const el = document.getElementById(id);
@@ -146,6 +146,7 @@ async function loadAll() {
     loadProjects(),
     loadSkills(),
     loadExperience(),
+    loadEducation(),
     loadCertificates(),
   ]);
   setupContactForm();
@@ -171,8 +172,8 @@ async function loadInfo() {
   const socials = document.getElementById('socialLinks');
   if (socials) {
     const items = [
-      { label: '⌥ GitHub',   url: d.github   },
-      { label: '⊞ LinkedIn', url: d.linkedIn  },
+      { label: '⌥ GitHub',   url: d.github  },
+      { label: '⊞ LinkedIn', url: d.linkedIn },
     ].filter(x => x.url);
     socials.innerHTML = items.map(x =>
       `<a href="${sanitize(x.url)}" target="_blank" rel="noopener" class="social-link">${x.label}</a>`
@@ -318,6 +319,45 @@ async function loadExperience() {
   timeline.querySelectorAll('.timeline-item').forEach(el => obs.observe(el));
 }
 
+/* ---------- Education ---------- */
+async function loadEducation() {
+  const edu = await apiFetch('education') ?? [];
+  const list = document.getElementById('educationList');
+  if (!list) return;
+  if (!edu.length) { list.innerHTML = '<p class="loading-state">No education found.</p>'; return; }
+
+  list.innerHTML = edu.map(e => `
+    <div class="edu-card">
+      <div class="edu-top">
+        <h3 class="edu-degree">${sanitize(e.degree)}</h3>
+        <span class="edu-period">${sanitize(e.period)}</span>
+      </div>
+      <div class="edu-institution">${sanitize(e.institution)}</div>
+      <div class="edu-location">📍 ${sanitize(e.location)}</div>
+      <p class="edu-desc">${sanitize(e.description)}</p>
+      ${e.modules && e.modules.length ? `
+        <div class="edu-modules-label">Key Modules</div>
+        <div class="edu-modules">
+          ${e.modules.map(m => `<span class="edu-module">${sanitize(m)}</span>`).join('')}
+        </div>
+      ` : ''}
+    </div>
+  `).join('');
+
+  // Animate cards in
+  requestAnimationFrame(() => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    list.querySelectorAll('.edu-card').forEach(el => obs.observe(el));
+  });
+}
+
 /* ---------- Certificates ---------- */
 async function loadCertificates() {
   const certs = await apiFetch('certificates') ?? [];
@@ -382,23 +422,11 @@ function setupContactForm() {
     };
 
     // ---- Validation ----
-    if (!templateParams.from_name) {
-      showError(feedback, 'Please enter your name.');
-      return;
-    }
-    if (!templateParams.from_email) {
-      showError(feedback, 'Please enter your email address.');
-      return;
-    }
+    if (!templateParams.from_name) { showError(feedback, 'Please enter your name.'); return; }
+    if (!templateParams.from_email) { showError(feedback, 'Please enter your email address.'); return; }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(templateParams.from_email)) {
-      showError(feedback, 'Please enter a valid email address.');
-      return;
-    }
-    if (!templateParams.message) {
-      showError(feedback, 'Please enter a message.');
-      return;
-    }
+    if (!emailRegex.test(templateParams.from_email)) { showError(feedback, 'Please enter a valid email address.'); return; }
+    if (!templateParams.message) { showError(feedback, 'Please enter a message.'); return; }
 
     // ---- Send ----
     btn.disabled = true;

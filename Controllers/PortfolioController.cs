@@ -21,7 +21,7 @@ public class PortfolioController : ControllerBase
         {
             Name = "Sedumedi Setshogo David",
             Title = "Software Developer",
-            Bio = "I'm a versatile software developer with expertise in backend development, enterprise systems, and data-driven solutions. I work with technologies including C#, Java, Python, SQL, ILE RPG, DB2, and UiPath, building clean, efficient, and reliable software. I'm passionate about solving complex problems and delivering impactful technology solutions.",
+            Bio = "I'm a software developer whose journey into tech has been driven by curiosity, persistence, and a passion for building real solutions. From starting with the fundamentals to now working as an RPG Developer, I’ve consistently grown by applying my skills in practical environments and solving real-world problems.\n\nI have gained hands-on experience developing backend and enterprise systems on IBM i using ILE RPG and DB2, while also building modern applications with C#, Java, ASP.NET Core, and JavaScript. Along the way, I’ve worked on full-stack projects and automation solutions, continuously improving my ability to write clean, efficient, and reliable code.\n\nI’m particularly motivated by the challenge of learning new technologies, improving existing systems, and bridging the gap between modern development and enterprise platforms. As an early-career developer, I’m eager to keep building, growing, and contributing to impactful software solutions.",
             Location = "Tembisa, GP",
             Email = "davidsedumedi23@gmail.com",
             Github = "https://github.com/Mdeva23",
@@ -61,8 +61,8 @@ public class PortfolioController : ControllerBase
             {
                 Id = 3,
                 Title = "Excel RPA",
-                Description = "Developed a robotic process automation solution using UiPath to streamline Excel based data entry and validation.",
-                Tags = new[] { "UiPath", "RPA", "Excel", "Automation" },
+                Description = "Developed a robotic process automation solution using UiPath to streamline Excel based data entry and validation. Used SQL for data validation and built error handling to ensure smooth operation.",
+                Tags = new[] { "UiPath", "RPA", "Excel", "SQL", "Automation" },
                 GithubUrl = "https://github.com/Mdeva23/CMPG-323-Project-4---38436272-",
                 LiveUrl = "",
                 Category = "Tools",
@@ -79,7 +79,7 @@ public class PortfolioController : ControllerBase
             new Skill { Id = 1,  Name = "C#",              Proficiency = 82, Category = "Backend",   Icon = "⚙️" },
             new Skill { Id = 2,  Name = "Java",            Proficiency = 75, Category = "Backend",   Icon = "☕" },
             new Skill { Id = 3,  Name = "Python",          Proficiency = 70, Category = "Backend",   Icon = "🐍" },
-            new Skill { Id = 4,  Name = "ILE RPG",         Proficiency = 85, Category = "Backend",   Icon = "💻" },
+            new Skill { Id = 4,  Name = "ILE RPG",         Proficiency = 85, Category = "Backend",   Icon = "🖥️" },
             new Skill { Id = 5,  Name = "ASP.NET Core",    Proficiency = 78, Category = "Backend",   Icon = "🔷" },
             new Skill { Id = 6,  Name = "JavaScript",      Proficiency = 70, Category = "Frontend",  Icon = "🟡" },
             new Skill { Id = 7,  Name = "HTML",            Proficiency = 78, Category = "Frontend",  Icon = "🌐" },
@@ -130,23 +130,41 @@ public class PortfolioController : ControllerBase
         });
     }
 
+    [HttpGet("education")]
+    public ActionResult<IEnumerable<Education>> GetEducation()
+    {
+        return Ok(new List<Education>
+        {
+            new Education
+            {
+                Id = 1,
+                Degree = "BSc in Information Technology",
+                Institution = "North-West University",
+                Location = "Vanderbijlpark, Vereeniging",
+                Period = "Feb 2022 — Nov 2024",
+                Description = "Completed a comprehensive degree in Information Technology with a focus on software development, enterprise systems, and databases. Graduated with hands-on project experience across multiple programming languages and platforms.",
+                Modules = new[]
+                {
+                    "Systems Analysis & Design",
+                    "Object-Oriented Programming (C# & Java)",
+                    "Data Structures & Algorithms",
+                    "Databases & SQL",
+                    "Computer Networks & Security",
+                    "Cloud Computing (Microsoft Azure)"
+                },
+                IsCurrent = false
+            }
+        });
+    }
+
     [HttpGet("certificates")]
     public ActionResult<IEnumerable<Certificate>> GetCertificates()
     {
         return Ok(new List<Certificate>
         {
-            // new Certificate
-            // {
-            //     Id = 1,
-            //     Title = "Azure Fundamentals",
-            //     Issuer = "Microsoft",
-            //     Year = "2026",
-            //     CredentialUrl = "https://learn.microsoft.com/en-us/certifications/azure-fundamentals/",
-            //     Icon = "☁️"
-            // },
             new Certificate
             {
-                Id = 2,
+                Id = 1,
                 Title = "RPG ILE Language",
                 Issuer = "Momentum Metropolitan Life Limited",
                 Year = "2025",
@@ -155,12 +173,12 @@ public class PortfolioController : ControllerBase
             },
             new Certificate
             {
-                Id = 3,
+                Id = 2,
                 Title = "Artificial Intelligence Fundamentals",
-                Issuer = "IBM Skillsbuild",
+                Issuer = "IBM SkillsBuild",
                 Year = "2025",
                 CredentialUrl = "https://www.credly.com/badges/f312839d-9ff6-408b-b7f7-086879bf76af",
-                Icon = "🤖"
+                Icon = "🧠"
             }
         });
     }

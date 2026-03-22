@@ -32,6 +32,18 @@ public class Experience
     public bool IsCurrent { get; set; }
 }
 
+public class Education
+{
+    public int Id { get; set; }
+    public string Degree { get; set; } = string.Empty;
+    public string Institution { get; set; } = string.Empty;
+    public string Location { get; set; } = string.Empty;
+    public string Period { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+    public string[] Modules { get; set; } = Array.Empty<string>();
+    public bool IsCurrent { get; set; }
+}
+
 public class Certificate
 {
     public int Id { get; set; }
