@@ -77,8 +77,8 @@ public class PortfolioController : ControllerBase
     {
         return Ok(new List<Skill>
         {
-            new Skill { Id = 1,  Name = "Java",            Proficiency = 75, Category = "Backend",   Icon = "☕" },
-            new Skill { Id = 2,  Name = "C#",              Proficiency = 82, Category = "Backend",   Icon = "⚙️" },
+            new Skill { Id = 1,  Name = "C#",              Proficiency = 82, Category = "Backend",   Icon = "⚙️" },
+            new Skill { Id = 2,  Name = "Java",            Proficiency = 75, Category = "Backend",   Icon = "☕" },
             new Skill { Id = 3,  Name = "Python",          Proficiency = 70, Category = "Backend",   Icon = "🐍" },
             new Skill { Id = 4,  Name = "ILE RPG",         Proficiency = 85, Category = "Backend",   Icon = "💻" },
             new Skill { Id = 5,  Name = "ASP.NET Core",    Proficiency = 78, Category = "Backend",   Icon = "🔷" },
@@ -88,8 +88,8 @@ public class PortfolioController : ControllerBase
             new Skill { Id = 9,  Name = "SQL",             Proficiency = 85, Category = "Database",  Icon = "🗄️" },
             new Skill { Id = 10, Name = "DB2 (IBM i)",     Proficiency = 80, Category = "Database",  Icon = "📦" },
             new Skill { Id = 11, Name = "Microsoft Azure", Proficiency = 68, Category = "Cloud",     Icon = "☁️" },
-            new Skill { Id = 12, Name = "Git & GitHub",    Proficiency = 69, Category = "Tools",     Icon = "🐙" },
-            new Skill { Id = 13, Name = "UiPath (RPA)",    Proficiency = 75, Category = "Tools",     Icon = "🤖" }
+            new Skill { Id = 12, Name = "UiPath (RPA)",    Proficiency = 75, Category = "Tools",     Icon = "🤖" },
+            new Skill { Id = 13, Name = "Git & GitHub",    Proficiency = 69, Category = "Tools",     Icon = "🐙" }
         });
     }
 
