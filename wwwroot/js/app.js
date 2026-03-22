@@ -425,7 +425,7 @@ function setupContactForm() {
     if (!templateParams.from_name) { showError(feedback, 'Please enter your name.'); return; }
     if (!templateParams.from_email) { showError(feedback, 'Please enter your email address.'); return; }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(templateParams.from_email)) { showError(feedback, 'Please enter a valid email address.'); return; }
+    if (!emailRegex.test(templateParams.from_email)) { showError(feedback, 'Please enter a valid email address(john@example.com).'); return; }
     if (!templateParams.message) { showError(feedback, 'Please enter a message.'); return; }
 
     // ---- Send ----
