@@ -52,7 +52,7 @@ function initCursor() {
     requestAnimationFrame(animate);
   })();
 
-  document.querySelectorAll('a, button, .project-card, .skill-category-card').forEach(el => {
+  document.querySelectorAll('a, button, .project-card, .skill-category-card, .cert-card').forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
   });
@@ -82,7 +82,7 @@ function initNav() {
 }
 
 function highlightActiveSection() {
-  const sections = ['home','about','projects','skills','experience','contact'];
+  const sections = ['home','about','projects','skills','experience','certificates','contact'];
   const mid = window.scrollY + window.innerHeight / 3;
   sections.forEach(id => {
     const el = document.getElementById(id);
@@ -146,6 +146,7 @@ async function loadAll() {
     loadProjects(),
     loadSkills(),
     loadExperience(),
+    loadCertificates(),
   ]);
   setupContactForm();
 }
@@ -317,8 +318,42 @@ async function loadExperience() {
   timeline.querySelectorAll('.timeline-item').forEach(el => obs.observe(el));
 }
 
+/* ---------- Certificates ---------- */
+async function loadCertificates() {
+  const certs = await apiFetch('certificates') ?? [];
+  const grid = document.getElementById('certificatesGrid');
+  if (!grid) return;
+  if (!certs.length) { grid.innerHTML = '<p class="loading-state">No certificates found.</p>'; return; }
+
+  grid.innerHTML = certs.map(c => `
+    <div class="cert-card">
+      <div class="cert-icon">${c.icon || '🎓'}</div>
+      <div class="cert-title">${sanitize(c.title)}</div>
+      <div class="cert-meta">
+        <span class="cert-issuer">${sanitize(c.issuer)}</span>
+        <span class="cert-year">${sanitize(c.year)}</span>
+      </div>
+      ${c.credentialUrl
+        ? `<a href="${sanitize(c.credentialUrl)}" target="_blank" rel="noopener" class="cert-link">View Credential ↗</a>`
+        : ''}
+    </div>
+  `).join('');
+
+  requestAnimationFrame(() => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 200px 0px' });
+    grid.querySelectorAll('.cert-card').forEach(el => obs.observe(el));
+  });
+}
+
 /* ============================================================
-   CONTACT FORM — EmailJS (works on all hosting platforms)
+   CONTACT FORM — EmailJS
    ============================================================ */
 function setupContactForm() {
   const EMAILJS_PUBLIC_KEY  = 'DFLM2bR_upkVfeyQb';
@@ -339,19 +374,39 @@ function setupContactForm() {
     const btnArrow   = btn.querySelector('.btn-arrow');
     const btnLoading = btn.querySelector('.btn-loading');
 
-    btn.disabled = true;
-    btnText.classList.add('t-hidden');
-    btnArrow.classList.add('t-hidden');
-    btnLoading.classList.remove('t-hidden');
-    feedback.className   = 'form-feedback t-hidden';
-    feedback.textContent = '';
-
     const templateParams = {
       from_name:  form.querySelector('[name="name"]').value.trim(),
       from_email: form.querySelector('[name="email"]').value.trim(),
       subject:    form.querySelector('[name="subject"]').value.trim(),
       message:    form.querySelector('[name="message"]').value.trim(),
     };
+
+    // ---- Validation ----
+    if (!templateParams.from_name) {
+      showError(feedback, 'Please enter your name.');
+      return;
+    }
+    if (!templateParams.from_email) {
+      showError(feedback, 'Please enter your email address.');
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(templateParams.from_email)) {
+      showError(feedback, 'Please enter a valid email address.');
+      return;
+    }
+    if (!templateParams.message) {
+      showError(feedback, 'Please enter a message.');
+      return;
+    }
+
+    // ---- Send ----
+    btn.disabled = true;
+    btnText.classList.add('t-hidden');
+    btnArrow.classList.add('t-hidden');
+    btnLoading.classList.remove('t-hidden');
+    feedback.className   = 'form-feedback t-hidden';
+    feedback.textContent = '';
 
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
@@ -360,7 +415,6 @@ function setupContactForm() {
       feedback.className   = 'form-feedback success';
       form.reset();
 
-      // Fade out after 15 seconds
       setTimeout(() => {
         feedback.style.transition = 'opacity 0.5s';
         feedback.style.opacity    = '0';
@@ -381,6 +435,11 @@ function setupContactForm() {
     btnArrow.classList.remove('t-hidden');
     btnLoading.classList.add('t-hidden');
   });
+}
+
+function showError(feedback, message) {
+  feedback.textContent = message;
+  feedback.className   = 'form-feedback error';
 }
 
 /* ============================================================

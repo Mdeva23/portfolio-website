@@ -32,6 +32,16 @@ public class Experience
     public bool IsCurrent { get; set; }
 }
 
+public class Certificate
+{
+    public int Id { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public string Issuer { get; set; } = string.Empty;
+    public string Year { get; set; } = string.Empty;
+    public string CredentialUrl { get; set; } = string.Empty;
+    public string Icon { get; set; } = string.Empty;
+}
+
 public class ContactMessage
 {
     public string Name { get; set; } = string.Empty;
@@ -50,5 +60,5 @@ public class PersonalInfo
     public string Github { get; set; } = string.Empty;
     public string LinkedIn { get; set; } = string.Empty;
     public string Twitter { get; set; } = string.Empty;
-    // public string[] Tags { get; set; } = Array.Empty<string>();
+    public string[] Tags { get; set; } = Array.Empty<string>();
 }

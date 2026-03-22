@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using PortfolioApp.Models;
-using MailKit.Net.Smtp;
-using MimeKit;
 
 namespace PortfolioApp.Controllers;
 
@@ -23,11 +21,12 @@ public class PortfolioController : ControllerBase
         {
             Name = "Sedumedi Setshogo David",
             Title = "Software Developer",
-            Bio = "I’m a versatile software developer with expertise in backend development, enterprise systems, and data-driven solutions. I work with technologies including C#, Java, Python, SQL, ILE RPG, DB2, and UiPath, building clean, efficient, and reliable software. I’m passionate about solving complex problems and delivering impactful technology solutions.",
+            Bio = "I'm a versatile software developer with expertise in backend development, enterprise systems, and data-driven solutions. I work with technologies including C#, Java, Python, SQL, ILE RPG, DB2, and UiPath, building clean, efficient, and reliable software. I'm passionate about solving complex problems and delivering impactful technology solutions.",
             Location = "Tembisa, GP",
             Email = "davidsedumedi23@gmail.com",
             Github = "https://github.com/Mdeva23",
-            LinkedIn = "https://www.linkedin.com/in/david-sedumedi-8331a3291"
+            LinkedIn = "https://www.linkedin.com/in/david-sedumedi-8331a3291",
+            Tags = new[] { "C#", ".NET", "ILE RPG", "Java", "Python", "SQL", "DB2" }
         });
     }
 
@@ -38,10 +37,10 @@ public class PortfolioController : ControllerBase
         {
             new Project
             {
-                Id = 2,
+                Id = 1,
                 Title = "SSD PortfolioApp",
                 Description = "A modern full-stack portfolio website built with ASP.NET Core 8 and vanilla JavaScript. Features dark/light mode, scroll animations, skill bars, project filtering, and a working contact form.",
-                Tags = new[] { "C#", "ASP.NET", "ASP.NET Core", "JS", "HTML", "CSS" },
+                Tags = new[] { "C#", "ASP.NET Core", "JS", "HTML", "CSS" },
                 GithubUrl = "https://github.com/Mdeva23/portfolio-website",
                 LiveUrl = "https://ssd-portfolio-website.onrender.com/",
                 Category = "Full-Stack",
@@ -49,7 +48,7 @@ public class PortfolioController : ControllerBase
             },
             new Project
             {
-                Id = 3,
+                Id = 2,
                 Title = "RPG Order Entry System",
                 Description = "Built an interactive order entry system on IBM i using RPGLE and embedded SQL, featuring subfile-based record navigation, order processing, and automated price and VAT calculations.",
                 Tags = new[] { "RPGLE Free Format", "DB2", "Embedded SQL", "Subfiles", "Python" },
@@ -60,7 +59,7 @@ public class PortfolioController : ControllerBase
             },
             new Project
             {
-                Id = 4,
+                Id = 3,
                 Title = "Excel RPA",
                 Description = "Developed a robotic process automation solution using UiPath to streamline Excel based data entry and validation.",
                 Tags = new[] { "UiPath", "RPA", "Excel", "Automation" },
@@ -118,7 +117,7 @@ public class PortfolioController : ControllerBase
                 Id = 2,
                 Role = "IBM I RPG Developer Intern",
                 Company = "Momentum Metropolitan",
-                Period = "Feb 2025 - Dec 2025",
+                Period = "Feb 2025 — Dec 2025",
                 Description = "Gained hands-on experience with enterprise systems on IBM i (AS/400), learning ILE RPG, DB2, and embedded SQL in real world development environments.",
                 Highlights = new[]
                 {
@@ -127,6 +126,41 @@ public class PortfolioController : ControllerBase
                     "Contributed to interactive programs supporting business-critical systems"
                 },
                 IsCurrent = false
+            }
+        });
+    }
+
+    [HttpGet("certificates")]
+    public ActionResult<IEnumerable<Certificate>> GetCertificates()
+    {
+        return Ok(new List<Certificate>
+        {
+            // new Certificate
+            // {
+            //     Id = 1,
+            //     Title = "Azure Fundamentals",
+            //     Issuer = "Microsoft",
+            //     Year = "2026",
+            //     CredentialUrl = "https://learn.microsoft.com/en-us/certifications/azure-fundamentals/",
+            //     Icon = "☁️"
+            // },
+            new Certificate
+            {
+                Id = 2,
+                Title = "RPG ILE Language",
+                Issuer = "Momentum Metropolitan Life Limited",
+                Year = "2025",
+                CredentialUrl = "",
+                Icon = "🖥️"
+            },
+            new Certificate
+            {
+                Id = 3,
+                Title = "Artificial Intelligence Fundamentals",
+                Issuer = "IBM Skillsbuild",
+                Year = "2025",
+                CredentialUrl = "https://www.credly.com/badges/f312839d-9ff6-408b-b7f7-086879bf76af",
+                Icon = "🤖"
             }
         });
     }
