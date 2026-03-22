@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader());
 });
 
-// Resolve wwwroot whether running locally or in Docker/Render
+// Resolve wwwroot whether running locally or in Render
 var wwwrootPath = Path.Combine(AppContext.BaseDirectory, "wwwroot");
 if (!Directory.Exists(wwwrootPath))
     wwwrootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
@@ -26,7 +26,7 @@ var app = builder.Build();
 // Enable CORS
 app.UseCors();
 
-// Use HTTPS only in production (Render/Docker usually doesn’t need it internally)
+// Use HTTPS only in production
 if (!app.Environment.IsDevelopment())
 {
     app.UseHttpsRedirection();
@@ -42,7 +42,7 @@ app.MapControllers();
 // Fallback to index.html for SPA routing
 app.MapFallbackToFile("index.html");
 
-// Get port from environment (Docker / Render) or default to 5000
+// Get port from environment Render or default to 5000
 var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
 
 // Run app
@@ -53,6 +53,6 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    // Render / Docker
+    // Render
     app.Run($"http://0.0.0.0:{port}");
 }
