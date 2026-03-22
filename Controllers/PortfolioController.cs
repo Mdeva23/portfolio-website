@@ -132,7 +132,7 @@ public class PortfolioController : ControllerBase
     }
 
     [HttpPost("contact")]
-    public async Task<ActionResult> SendMessage([FromBody] ContactMessage message)
+    public ActionResult SendMessage([FromBody] ContactMessage message)
     {
         if (string.IsNullOrWhiteSpace(message.Name) ||
             string.IsNullOrWhiteSpace(message.Email) ||
@@ -141,43 +141,9 @@ public class PortfolioController : ControllerBase
             return BadRequest(new { error = "Name, email, and message are required." });
         }
 
-        try
-        {
-            // 🔹 Read secrets from environment variables (works locally too)
-            var senderEmail = _config["EmailSettings:SenderEmail"];
-            var senderPassword = _config["EmailSettings:SenderPassword"];
-            var receiverEmail = _config["EmailSettings:ReceiverEmail"];
+        // Email is handled by EmailJS on the frontend
+        Console.WriteLine($"[Contact] From: {message.Name} <{message.Email}> — {message.Subject}");
 
-            var email = new MimeMessage();
-            email.From.Add(new MailboxAddress(message.Name, senderEmail));
-            email.To.Add(new MailboxAddress("Portfolio Owner", receiverEmail));
-            email.Subject = $"Portfolio Contact: {message.Subject}";
-            email.Body = new TextPart("plain")
-            {
-                Text =
-                    $"From: {message.Name}\n" +
-                    $"Email: {message.Email}\n\n" +
-                    $"Message:\n{message.Message}"
-            };
-
-            using var smtp = new SmtpClient();
-            // 🔹 Connect using StartTLS (works with Gmail App Password)
-            await smtp.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
-            await smtp.AuthenticateAsync(senderEmail, senderPassword);
-            await smtp.SendAsync(email);
-            await smtp.DisconnectAsync(true);
-
-            return Ok(new
-            {
-                success = true,
-                message = "Message received! I'll get back to you within 24 hours."
-            });
-        }
-        catch (Exception ex)
-        {
-            // 🔹 Log for Render live debugging
-            Console.WriteLine($"[Email Error] {ex.Message}");
-            return StatusCode(500, new { error = "Failed to send email. Please check your credentials or SMTP settings." });
-        }
+        return Ok(new { success = true, message = "Message received! I'll get back to you within 24 hours." });
     }
 }

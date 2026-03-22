@@ -91,11 +91,11 @@
         <div class="terminal-body">
           <div class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">whoami</span></div>
           <div class="t-output t-hidden" id="to1">setshogo_david_sedumedi — software_developer</div>
-          <div class="t-line t-hidden" id="tl2"><span class="t-prompt">$ </span><span class="t-cmd">skills.json</span></div>
-          <div class="t-output t-hidden" id="to3"><span class="t-key">"stack"</span>: [<span class="t-str">"C#"</span>, <span class="t-str">"Java"</span>, <span class="t-str">".NET"</span>, <span class="t-str">"Python"</span>, <span class="t-str">"ILE RPG"</span>, <span class="t-str">"ASP.NET Core"</span>, <span class="t-str">"JavaScript"</span>, <span class="t-str">"HTML"</span>, <span class="t-str">"CSS"</span>, <span class="t-str">"SQL"</span>, <span class="t-str">"DB2"</span>, <span class="t-str">"Microsoft Azure"</span>, <span class="t-str">"Git"</span>, <span class="t-str">"UiPath"</span>]</div>
-          <div class="t-line t-hidden" id="tl4"><span class="t-prompt">$ </span><span class="t-cmd">code_of_the_day</span></div>
+          <div class="t-line t-hidden" id="tl2"><span class="t-prompt">$ </span><span class="t-cmd">cat skills.json</span></div>
+          <div class="t-output t-hidden" id="to3"><span class="t-key">"stack"</span>: [<span class="t-str">"C#"</span>, <span class="t-str">"Java"</span>, <span class="t-str">"ILE RPG"</span>, <span class="t-str">"Python"</span>, <span class="t-str">"SQL"</span>]</div>
+          <div class="t-line t-hidden" id="tl4"><span class="t-prompt">$ </span><span class="t-cmd">cat quote.txt</span></div>
           <div class="t-output t-hidden" id="to5">if (coffee > 0) { code(); } else { refuel(); }</div>
-          <div class="t-line t-hidden" id="tl4"><span class="t-prompt">$ </span><span class="t-cursor">█</span></div>
+          <div class="t-line t-hidden" id="tl6"><span class="t-prompt">$ </span><span class="t-cursor">█</span></div>
         </div>
       </div>
     </div>
@@ -136,11 +136,11 @@
             </div>
             <div class="detail-item">
               <span class="detail-icon">🎓</span>
-              <span id="aboutUniversity">BSc in Information Technolgy - NWU</span>
+              <span id="aboutUniversity">BSc in Information Technology - NWU</span>
             </div>
           </div>
           <div class="social-links" id="socialLinks"></div>
-          <a href="Setshogo_David_Sedumedi's_Resume.pdf" class="btn btn-primary">
+          <a href="Setshogo_David_Sedumedi's_Resume.pdf" class="btn btn-primary" download>
             Download CV <span class="btn-arrow">↓</span>
           </a>
         </div>
@@ -278,6 +278,8 @@
     </div>
   </footer>
 
+  <!-- EmailJS — handles contact form sending from the browser -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="/js/app.js"></script>
 </body>
 </html>

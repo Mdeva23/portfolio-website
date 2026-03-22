@@ -127,11 +127,10 @@ function initTerminal() {
   const steps = [
     { delay: 700,  id: 'to1' },
     { delay: 1300, id: 'tl2' },
-    { delay: 1900, id: 'to2' },
-    { delay: 2500, id: 'tl3' },
-    { delay: 3100, id: 'to3' },
-    { delay: 3700, id: 'tl4' },
-    { delay: 4300, id: 'to5' },
+    { delay: 1900, id: 'to3' },
+    { delay: 2500, id: 'tl4' },
+    { delay: 3100, id: 'to5' },
+    { delay: 3700, id: 'tl6' },
   ];
   steps.forEach(({ delay, id }) =>
     setTimeout(() => document.getElementById(id)?.classList.remove('t-hidden'), delay)
@@ -231,7 +230,8 @@ async function loadSkills() {
     Backend:  { icon: '⚙️', desc: 'Server-side architecture, APIs, and data engineering.' },
     Frontend: { icon: '🎨', desc: 'Crafting responsive, accessible user interfaces.' },
     Database: { icon: '🗄️', desc: 'Relational and NoSQL data storage & querying.' },
-    DevOps:   { icon: '☁️', desc: 'CI/CD, containerisation, and cloud infrastructure.' },
+    Cloud:    { icon: '☁️', desc: 'Cloud platforms and infrastructure.' },
+    Tools:    { icon: '🔧', desc: 'Developer tools, automation, and version control.' },
   };
 
   const catsEl = document.getElementById('skillsCategories');
@@ -318,9 +318,15 @@ async function loadExperience() {
 }
 
 /* ============================================================
-   CONTACT FORM
+   CONTACT FORM — EmailJS (works on all hosting platforms)
    ============================================================ */
 function setupContactForm() {
+  const EMAILJS_PUBLIC_KEY  = 'DFLM2bR_upkVfeyQb';
+  const EMAILJS_SERVICE_ID  = 'service_3gg87ul';
+  const EMAILJS_TEMPLATE_ID = 'template_kmk4wsa';
+
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
   const form     = document.getElementById('contactForm');
   const btn      = document.getElementById('submitBtn');
   const feedback = document.getElementById('formFeedback');
@@ -337,41 +343,36 @@ function setupContactForm() {
     btnText.classList.add('t-hidden');
     btnArrow.classList.add('t-hidden');
     btnLoading.classList.remove('t-hidden');
-    feedback.className = 'form-feedback t-hidden';
+    feedback.className   = 'form-feedback t-hidden';
     feedback.textContent = '';
 
-    const payload = {
-      name:    form.querySelector('[name="name"]').value.trim(),
-      email:   form.querySelector('[name="email"]').value.trim(),
-      subject: form.querySelector('[name="subject"]').value.trim(),
-      message: form.querySelector('[name="message"]').value.trim(),
+    const templateParams = {
+      from_name:  form.querySelector('[name="name"]').value.trim(),
+      from_email: form.querySelector('[name="email"]').value.trim(),
+      subject:    form.querySelector('[name="subject"]').value.trim(),
+      message:    form.querySelector('[name="message"]').value.trim(),
     };
 
     try {
-      const [res] = await Promise.all([
-        fetch(`${API}/contact`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        }),
-        new Promise(resolve => setTimeout(resolve, 800))
-      ]);
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
 
-      let data;
-      try { data = await res.json(); } catch { data = {}; }
+      feedback.textContent = "Message received! I'll get back to you within 24 hours.";
+      feedback.className   = 'form-feedback success';
+      form.reset();
 
-      if (res.ok) {
-        feedback.textContent = data.message || 'Message sent successfully!';
-        feedback.className   = 'form-feedback success';
-        form.reset();
-      } else {
-        feedback.textContent = data.error || 'Something went wrong. Please try again.';
-        feedback.className   = 'form-feedback error';
-      }
+      // Fade out after 15 seconds
+      setTimeout(() => {
+        feedback.style.transition = 'opacity 0.5s';
+        feedback.style.opacity    = '0';
+        setTimeout(() => {
+          feedback.className     = 'form-feedback t-hidden';
+          feedback.style.opacity = '1';
+        }, 500);
+      }, 15000);
 
     } catch (err) {
-      console.error(err);
-      feedback.textContent = 'Network error — please try again.';
+      console.error('[EmailJS Error]', err);
+      feedback.textContent = 'Failed to send. Please email me directly at davidsedumedi23@gmail.com';
       feedback.className   = 'form-feedback error';
     }
 
@@ -379,15 +380,6 @@ function setupContactForm() {
     btnText.classList.remove('t-hidden');
     btnArrow.classList.remove('t-hidden');
     btnLoading.classList.add('t-hidden');
-
-    if (feedback.className.includes('success')) {
-      feedback.style.transition = 'opacity 0.5s';
-      setTimeout(() => feedback.style.opacity = '0', 15000);
-      setTimeout(() => {
-        feedback.className     = 'form-feedback t-hidden';
-        feedback.style.opacity = '1';
-      }, 15500);
-    }
   });
 }
 
