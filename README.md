@@ -3,19 +3,19 @@
 **Live site:** [ssd-portfolio-website.onrender.com](https://ssd-portfolio-website.onrender.com)
 
 ---
-## ✨ Features
+##  Features
 
-- 🌗 **Dark / Light mode** — persisted in localStorage with smooth CSS transitions
-- ⚡ **REST API** — 7 endpoints serving all portfolio data as JSON
-- 🎨 **Animated UI** — scroll reveal, skill bars, typewriter terminal, custom cursor
-- 🗂️ **Project filtering** — filter by category without page reload
-- 📬 **Working contact form** — sends real emails via EmailJS (browser-based, no SMTP)
-- 🎓 **Education section** — degree, institution, modules displayed as chips
-- 📜 **Experience timeline** — animated vertical timeline with current role indicator
-- 🏅 **Certificates section** — with credential links
+-  **Dark / Light mode** — persisted in localStorage with smooth CSS transitions
+-  **REST API** — 7 endpoints serving all portfolio data as JSON
+-  **Animated UI** — scroll reveal, skill bars, typewriter terminal, custom cursor
+-  **Project filtering** — filter by category without page reload
+-  **Working contact form** — sends real emails via EmailJS (browser-based, no SMTP)
+-  **Education section** — degree, institution, modules displayed as chips
+-  **Experience timeline** — animated vertical timeline with current role indicator
+-  **Certificates section** — with credential links
 
 ---
-## 🏗️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -27,7 +27,7 @@
 | Server | Kestrel (built-in .NET) |
 
 ---
-## 📁 Project Structure
+##  Project Structure
 ```
 PortfolioApp/
 ├── Controllers/
@@ -49,7 +49,7 @@ PortfolioApp/
 ```
 
 ---
-## 🌐 API Endpoints
+##  API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -62,7 +62,7 @@ PortfolioApp/
 | POST | `/api/portfolio/contact` | Contact form (logs to console) |
 
 ---
-## 🚀 Getting Started
+##  Getting Started
 ### Prerequisites
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8)
 
@@ -80,7 +80,7 @@ dotnet run
 Open **http://localhost:5000** in your browser.
 
 ---
-## 🔧 Customisation
+##  Customisation
 
 All content lives in `Controllers/PortfolioController.cs`. Update the methods below to reflect your own details:
 
@@ -94,7 +94,7 @@ All content lives in `Controllers/PortfolioController.cs`. Update the methods be
 | `GetCertificates()` | Title, issuer, year, credential URL |
 
 ---
-## 📬 Contact Form (EmailJS)
+##  Contact Form (EmailJS)
 
 The contact form sends emails directly from the browser using [EmailJS](https://emailjs.com).
 
@@ -109,7 +109,7 @@ const EMAILJS_TEMPLATE_ID = 'your_template_id';
 EmailJS free tier provides 200 emails/month.
 
 ---
-## 📦 Deployment (Render)
+##  Deployment (Render)
 
 ### 1. Add a Dockerfile to the project root
 
@@ -147,7 +147,7 @@ Every `git push` triggers an automatic redeploy.
 
 ---
 
-## 🛠️ Local Development Tips
+##  Local Development Tips
 ```bash
 # Run with hot reload
 dotnet watch run
