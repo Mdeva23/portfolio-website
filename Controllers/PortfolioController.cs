@@ -166,7 +166,7 @@ public class PortfolioController : ControllerBase
             {
                 Id = 1,
                 Title = "RPG ILE Language",
-                Issuer = "Momentum Metropolitan Life Limited",
+                Issuer = "Momentum Metropolitan",
                 Year = "2025",
                 CredentialUrl = "",
                 Icon = "🖥️"
