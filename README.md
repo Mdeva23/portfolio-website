@@ -106,8 +106,6 @@ const EMAILJS_SERVICE_ID  = 'your_service_id';
 const EMAILJS_TEMPLATE_ID = 'your_template_id';
 ```
 
-EmailJS free tier provides 200 emails/month.
-
 ---
 ##  Deployment (Render)
 
