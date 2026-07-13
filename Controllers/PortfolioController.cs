@@ -21,7 +21,7 @@ public class PortfolioController : ControllerBase
         {
             Name = "Sedumedi Setshogo David",
             Title = "Software Developer",
-            Bio = "I'm a Software Developer with experience building enterprise applications on IBM i using ILE RPG, DB2, and Embedded SQL, alongside modern applications with C#, ASP.NET Core, Java, JavaScript, and SQL. I enjoy solving business problems, modernizing legacy systems, and developing reliable software that delivers real value. I'm continuously expanding my skills while contributing to enterprise and full-stack projects.",
+            Bio = "I'm a Software Developer with experience building enterprise applications on IBM i using ILE RPG, DB2, and Embedded SQL, alongside modern applications with C#, ASP.NET Core, Java, and SQL. I enjoy solving business problems, modernizing legacy systems, and developing reliable software that delivers real value. I'm continuously expanding my skills while contributing to enterprise and full-stack projects.",
             Location = "Tembisa, GP",
             Email = "davidsedumedi23@gmail.com",
             Github = "https://github.com/Mdeva23",
