@@ -229,11 +229,11 @@ async function loadSkills() {
 
   const categories = [...new Set(skills.map(s => s.category))];
   const catMeta = {
-    Backend:  { icon: '⚙️', desc: 'Server-side architecture, APIs, and data engineering.' },
-    Frontend: { icon: '🎨', desc: 'Crafting responsive, accessible user interfaces.' },
-    Database: { icon: '🗄️', desc: 'Relational and NoSQL data storage & querying.' },
-    Cloud:    { icon: '☁️', desc: 'Cloud platforms and infrastructure.' },
-    Tools:    { icon: '🔧', desc: 'Developer tools, automation, and version control.' },
+    Backend:  { icon: '', desc: 'Server-side architecture, APIs, and data engineering.' },
+    Frontend: { icon: '', desc: 'Crafting responsive, accessible user interfaces.' },
+    Database: { icon: '', desc: 'Relational and NoSQL data storage & querying.' },
+    Cloud:    { icon: '', desc: 'Cloud platforms and infrastructure.' },
+    Tools:    { icon: '', desc: 'Developer tools, automation, and version control.' },
   };
 
   const catsEl = document.getElementById('skillsCategories');
@@ -333,7 +333,7 @@ async function loadEducation() {
         <span class="edu-period">${sanitize(e.period)}</span>
       </div>
       <div class="edu-institution">${sanitize(e.institution)}</div>
-      <div class="edu-location">📍 ${sanitize(e.location)}</div>
+      <div class="edu-location">${sanitize(e.location)}</div>
       <p class="edu-desc">${sanitize(e.description)}</p>
       ${e.modules && e.modules.length ? `
         <div class="edu-modules-label">Key Modules</div>
