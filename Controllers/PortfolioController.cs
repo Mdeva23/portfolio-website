@@ -100,7 +100,7 @@ public class PortfolioController : ControllerBase
             new Experience
             {
                 Id = 1,
-                Role = "Full Stack Junior RPG Developer",
+                Role = "Junior Software Developer",
                 Company = "Nashua LTD",
                 Period = "Dec 2025 — Present",
                 Description = "Developed and optimized enterprise applications on IBM i (AS/400) using ILE RPG, DB2, and embedded SQL, delivering reliable and efficient backend solutions for business-critical operations.",
