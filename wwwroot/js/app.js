@@ -172,8 +172,8 @@ async function loadInfo() {
   const socials = document.getElementById('socialLinks');
   if (socials) {
     const items = [
-      { label: '⌥ GitHub',   url: d.github  },
-      { label: '⊞ LinkedIn', url: d.linkedIn },
+      { label: 'GitHub',   url: d.github  },
+      { label: 'LinkedIn', url: d.linkedIn },
     ].filter(x => x.url);
     socials.innerHTML = items.map(x =>
       `<a href="${sanitize(x.url)}" target="_blank" rel="noopener" class="social-link">${x.label}</a>`
@@ -240,7 +240,7 @@ async function loadSkills() {
   if (!catsEl) return;
 
   catsEl.innerHTML = categories.map((cat, i) => {
-    const meta = catMeta[cat] || { icon: '🔧', desc: '' };
+    const meta = catMeta[cat] || { icon: '', desc: '' };
     const count = skills.filter(s => s.category === cat).length;
     return `
       <div class="skill-category-card ${i === 0 ? 'active' : ''}" data-cat="${sanitize(cat)}">
@@ -272,7 +272,7 @@ function renderSkillBars(category, skills) {
   barsEl.innerHTML = filtered.map(s => `
     <div class="skill-bar-item">
       <div class="skill-bar-top">
-        <span class="skill-name"><span>${s.icon}</span>${sanitize(s.name)}</span>
+        <span class="skill-name">${sanitize(s.name)}</span>
         <span class="skill-pct">${s.proficiency}%</span>
       </div>
       <div class="skill-track">
