@@ -438,7 +438,7 @@ function setupContactForm() {
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
 
-      feedback.textContent = "Message received! I'll get back to you within 24 hours.";
+      feedback.textContent = "Message sent successfully. Thank you for reaching out. I'll respond as soon as possible.";
       feedback.className   = 'form-feedback success';
       form.reset();
 
