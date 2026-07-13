@@ -268,7 +268,6 @@ body:hover .cursor { opacity: 1; }
 .skill-category-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; cursor: pointer; transition: all var(--transition); }
 .skill-category-card:hover, .skill-category-card.active { border-color: var(--accent); box-shadow: 0 4px 30px rgba(0,113,206,0.1); }
 .scc-top { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-.scc-icon { font-size: 1.4rem; }
 .scc-name { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text); }
 .scc-count { margin-left: auto; font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); background: rgba(0,113,206,0.1); padding: 2px 8px; border-radius: 20px; }
 .scc-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
