@@ -377,7 +377,6 @@ body:hover .cursor { opacity: 1; }
 .contact-tagline { font-size: 1.05rem; color: var(--text-subtle); line-height: 1.7; margin-bottom: 40px; }
 .contact-items { display: flex; flex-direction: column; gap: 20px; }
 .contact-item { display: flex; align-items: flex-start; gap: 16px; }
-.ci-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
 .ci-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
 .ci-value { font-size: 0.92rem; color: var(--text); }
 .ci-value a:hover { color: var(--accent); }
