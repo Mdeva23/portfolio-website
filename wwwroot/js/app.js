@@ -367,7 +367,6 @@ async function loadCertificates() {
 
   grid.innerHTML = certs.map(c => `
     <div class="cert-card">
-      <div class="cert-icon">${c.icon || '🎓'}</div>
       <div class="cert-title">${sanitize(c.title)}</div>
       <div class="cert-meta">
         <span class="cert-issuer">${sanitize(c.issuer)}</span>
