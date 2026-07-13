@@ -169,7 +169,8 @@ public class PortfolioController : ControllerBase
                 Issuer = "Momentum Metropolitan",
                 Year = "2025",
                 CredentialUrl = "",
-                Icon = "🖥️"
+                // Icon = "🖥️"
+                Icon = ""
             },
             new Certificate
             {
@@ -178,7 +179,8 @@ public class PortfolioController : ControllerBase
                 Issuer = "IBM SkillsBuild",
                 Year = "2025",
                 CredentialUrl = "https://www.credly.com/badges/f312839d-9ff6-408b-b7f7-086879bf76af",
-                Icon = "🧠"
+                // Icon = "🧠"
+                Icon = ""
             }
         });
     }
