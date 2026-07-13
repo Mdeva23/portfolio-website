@@ -21,7 +21,7 @@ public class PortfolioController : ControllerBase
         {
             Name = "Sedumedi Setshogo David",
             Title = "Software Developer",
-            Bio = "I'm a software developer whose journey into tech has been driven by curiosity, persistence, and a passion for building real solutions. From starting with the fundamentals to now working as an RPG Developer, I’ve consistently grown by applying my skills in practical environments and solving real-world problems.\n\nI have gained hands-on experience developing backend and enterprise systems on IBM i using ILE RPG and DB2, while also building modern applications with C#, Java, ASP.NET Core, and JavaScript. Along the way, I’ve worked on full-stack projects and automation solutions, continuously improving my ability to write clean, efficient, and reliable code.\n\nI’m particularly motivated by the challenge of learning new technologies, improving existing systems, and bridging the gap between modern development and enterprise platforms. As an early-career developer, I’m eager to keep building, growing, and contributing to impactful software solutions.",
+            Bio = "I'm a Software Developer with experience building enterprise applications on IBM i using ILE RPG, DB2, and Embedded SQL, alongside modern applications with C#, ASP.NET Core, Java, JavaScript, and SQL. I enjoy solving business problems, modernizing legacy systems, and developing reliable software that delivers real value. I'm continuously expanding my skills while contributing to enterprise and full-stack projects.",
             Location = "Tembisa, GP",
             Email = "davidsedumedi23@gmail.com",
             Github = "https://github.com/Mdeva23",
@@ -39,7 +39,7 @@ public class PortfolioController : ControllerBase
             {
                 Id = 1,
                 Title = "SSD PortfolioApp",
-                Description = "A modern full-stack portfolio website built with ASP.NET Core 8 and vanilla JavaScript. Features dark/light mode, scroll animations, skill bars, project filtering, and a working contact form.",
+                Description = "Responsive portfolio application built with ASP.NET Core 8 and JavaScript featuring REST APIs, dark/light mode, animations, project filtering, and EmailJS integration.",
                 Tags = new[] { "C#", "ASP.NET Core", "JS", "HTML", "CSS" },
                 GithubUrl = "https://github.com/Mdeva23/portfolio-website",
                 LiveUrl = "https://ssd-portfolio-website.onrender.com/",
@@ -50,7 +50,7 @@ public class PortfolioController : ControllerBase
             {
                 Id = 2,
                 Title = "RPG Order Entry System",
-                Description = "Built an interactive order entry system on IBM i using RPGLE and embedded SQL, featuring subfile-based record navigation, order processing, and automated price and VAT calculations.",
+                Description = "Enterprise order management application developed on IBM i using ILE RPG, Embedded SQL, and DB2 with interactive subfiles, validation, VAT calculations, and optimized database processing.",
                 Tags = new[] { "RPGLE Free Format", "DB2", "Embedded SQL", "Subfiles", "Python" },
                 GithubUrl = "",
                 LiveUrl = "",
@@ -103,12 +103,12 @@ public class PortfolioController : ControllerBase
                 Role = "Junior Software Developer",
                 Company = "Nashua LTD",
                 Period = "Dec 2025 — Present",
-                Description = "Developed and optimized enterprise applications on IBM i (AS/400) using ILE RPG, DB2, and embedded SQL, delivering reliable and efficient backend solutions for business-critical operations.",
+                Description = "Develop enterprise applications on IBM i (AS/400) using ILE RPG, DB2, and Embedded SQL while maintaining and modernizing business-critical systems used in production environments.",
                 Highlights = new[]
                 {
-                    "Built interactive subfile programs improving backend processing efficiency",
-                    "Modernized legacy systems increasing reliability and maintainability of enterprise applications",
-                    "Implemented paging, validation, and batch processing ensuring accurate and high performance business operations"
+                    "Developed interactive RPGLE subfile applications for enterprise order processing.",
+                    "Enhanced and maintained legacy IBM i applications to improve reliability and maintainability.",
+                    "Implemented validation, paging, and batch processing using Embedded SQL and DB2."
                 },
                 IsCurrent = true
             },
@@ -142,7 +142,7 @@ public class PortfolioController : ControllerBase
                 Institution = "North-West University",
                 Location = "Vanderbijlpark, Vereeniging",
                 Period = "Feb 2022 — Nov 2024",
-                Description = "Completed a comprehensive degree in Information Technology with a focus on software development, enterprise systems, and databases. Graduated with hands-on project experience across multiple programming languages and platforms.",
+                Description = "Graduated with a BSc in Information Technology, gaining practical experience in software engineering, databases, cloud computing, object-oriented programming, and enterprise application development.",
                 Modules = new[]
                 {
                     "Systems Analysis & Design",
@@ -198,6 +198,6 @@ public class PortfolioController : ControllerBase
         // Email is handled by EmailJS on the frontend
         Console.WriteLine($"[Contact] From: {message.Name} <{message.Email}> — {message.Subject}");
 
-        return Ok(new { success = true, message = "Message received! I'll get back to you within 24 hours." });
+        return Ok(new { success = true, message = "Message sent successfully. Thank you for reaching out. I'll respond as soon as possible." });
     }
 }
